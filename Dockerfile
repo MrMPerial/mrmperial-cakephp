@@ -3,7 +3,6 @@ FROM php:7.4.11-apache
 RUN requirements="g++ libicu-dev" \
     && apt-get update && apt-get install -y $requirements \
     && docker-php-ext-install mysqli pdo pdo_mysql pcntl intl \
-    && docker-php-ext-enable pdo_mysql \
     && requirementsToRemove="g++ libicu-dev" \
     && apt-get purge --auto-remove -y $requirementsToRemove    
 
